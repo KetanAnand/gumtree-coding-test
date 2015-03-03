@@ -41,12 +41,16 @@ public class AddressBookFileProcessor {
 
 		for (String personInfoString : personInfoStringList) {
 			String[] personInfoStringArray = personInfoString.split(",");
+			
+			// 3 elements in the string array : Name, Gender, DateOfBirth 
 			if (personInfoStringArray.length == 3) {
+
 				String name = personInfoStringArray[0].trim();
 				Gender gender = PersonBuilder
 						.getGender(personInfoStringArray[1].trim());
 				LocalDate dob = PersonBuilder
 						.getDateOfBirth((personInfoStringArray[2].trim()));
+
 				if (StringUtils.isNotBlank(name) && gender != null
 						&& dob != null) {
 					Person person = new Person(name, gender, dob);

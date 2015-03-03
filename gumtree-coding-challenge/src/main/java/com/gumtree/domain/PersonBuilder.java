@@ -20,6 +20,8 @@ public class PersonBuilder {
 	public static LocalDate getDateOfBirth(String dateOfBirth)
 			throws NumberFormatException {
 		String[] dateContents = dateOfBirth.split("/");
+
+		// 3 elements in the dateContents : Day, Month, Year 
 		if (dateContents.length == 3) {
 			// Appending year prefix 19 to year if it has only 2 digits.
 			String year = dateContents[2].length() == 2 ? "19"

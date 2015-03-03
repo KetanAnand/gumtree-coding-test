@@ -61,9 +61,18 @@ public class AddressBookServiceTest {
 	 * Test compare age by days using name for younger.
 	 */
 	@Test
-	public void testCompareAgeByDaysUsingNameForYounger() {
+	public void testCompareAgeByDaysUsingNamePositive() {
 		assertEquals(addressBookService.calculateAgeDifferenceInDays(
 				"Bill McKnight", "Paul Robinson"), 2862);
+	}
+
+	/**
+	 * Test compare age by days using name for older.
+	 */
+	@Test
+	public void testCompareAgeByDaysUsingNameNegative() {
+		assertEquals(addressBookService.calculateAgeDifferenceInDays(
+				"Paul Robinson", "Bill McKnight"), -2862);
 	}
 
 }
